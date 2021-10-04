@@ -117,3 +117,33 @@ int main()
 	}
 
 }
+
+
+#include <iostream>
+#include <cmath>
+#include <Windows.h>
+
+using namespace std;
+
+int main()
+{
+    HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
+    GetConsoleScreenBufferInfo(handle, &consoleInfo);
+    int height = consoleInfo.srWindow.Bottom - consoleInfo.srWindow.Top;
+    int width = consoleInfo.srWindow.Right - consoleInfo.srWindow.Left;
+
+    _COORD c;
+    for (double i = 0; i < 7; i += 0.02)
+    {
+        c.X = (i / 7 * width);
+        c.Y = ((-sin(i) / 1 + 1) * (height / 2));
+        SetConsoleCursorPosition(handle, c);
+        cout << '*';
+    }
+
+    int a;
+    cin >> a;
+
+    return 0;
+}

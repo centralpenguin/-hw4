@@ -52,3 +52,31 @@ int main()
 	cin >> a;
 	cout << sign(a) << endl;
 }
+
+
+
+#include <iostream>
+#include <fstream>
+
+int spryam(float a, float b)
+{
+	return (a * b);
+}
+
+float streug(int a, int h)
+{
+	return (a * h / 2);
+}
+
+double skr(double r)
+{
+	return r * r * 3.14;
+}
+
+using namespace std;
+int main()
+{
+	cout << spryam(5, 10) << endl;
+	cout << streug(5, 10) << endl;
+	cout << skr(2.3) << endl;
+}

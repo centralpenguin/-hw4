@@ -1,0 +1,54 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+    ifstream fin("file.txt");
+    if (fin.is_open())
+    {
+        int* mass = new int[10];
+        int i = 0;
+        while (fin >> mass[i])
+        {
+            i++;
+        }
+        int m = i;
+        int sum = 0;
+        for (int j = 0; j < m; j++)
+        {
+            cout << mass[j] << " ";
+            sum += mass[j];
+        }
+        cout << endl;
+        cout << sum << endl;
+        fin.close();
+    }
+    else
+        cout << "File ne naiden." << endl;
+}
+
+#include <iostream>
+using namespace std;
+
+int sign(int b)
+{
+	if (b > 0)
+	{
+		return 1;
+	}
+	if (b==0)
+	{
+		return 0;
+	}
+	if (b<0)
+	{
+		return -1;
+	}
+}
+
+int main()
+{
+	int a;
+	cin >> a;
+	cout << sign(a) << endl;
+}
